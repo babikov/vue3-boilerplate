@@ -18,8 +18,8 @@ module.exports = merge(baseWebpackConfig, cssWebpackConfig, {
     devMiddleware: {
       publicPath: config.dev.publicPath,
     },
-    open: false,
-    host: '0.0.0.0',
+    open: true,
+    host: 'localhost',
     port: config.dev.port,
     liveReload: false,
   },
