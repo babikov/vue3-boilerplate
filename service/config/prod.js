@@ -7,6 +7,9 @@ const baseWebpackConfig = require('./base')
 const cssWebpackConfig = require('./css')
 const config = require('../project.config')
 const terserOptions = require('./terserOptions')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+const withReport = process.env.npm_config_withReport
 
 module.exports = merge(baseWebpackConfig, cssWebpackConfig, {
   mode: 'production',
@@ -37,4 +40,6 @@ module.exports = merge(baseWebpackConfig, cssWebpackConfig, {
       },
     },
   },
+
+  plugins: [withReport ? new BundleAnalyzerPlugin() : ''],
 })
