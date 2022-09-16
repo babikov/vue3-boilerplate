@@ -2,12 +2,12 @@
 
 const { merge } = require('webpack-merge')
 const TerserPlugin = require('terser-webpack-plugin')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const baseWebpackConfig = require('./base')
 const cssWebpackConfig = require('./css')
 const config = require('../project.config')
 const terserOptions = require('./terserOptions')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const withReport = process.env.npm_config_withReport
 
